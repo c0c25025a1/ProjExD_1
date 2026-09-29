@@ -10,12 +10,15 @@ def main():
     screen = pg.display.set_mode((800, 600))
     clock  = pg.time.Clock()
     bg_img = pg.image.load("fig/pg_bg.jpg")
+    kt_img = pg.image.load("fig/3.png") #練習3のこうかとん読み込み
+    kt_img = pg.transform.flip(kt_img,True,False)#こうかとん左右反転
     tmr = 0
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
 
         screen.blit(bg_img, [0, 0])
+        screen.blit(kt_img, [300, 200]) #練習4のこうかとん貼り付け
         pg.display.update()
         tmr += 1        
         clock.tick(10)
