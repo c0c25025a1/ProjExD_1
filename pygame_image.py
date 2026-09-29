@@ -21,7 +21,9 @@ def main():
             if event.type == pg.QUIT: return
 
         key_lst = pg.key.get_pressed()
+    
         #print(key_lst)
+        kt_rct.move_ip(-1,0)
         if key_lst[pg.K_UP]:
             kt_rct.move_ip((0,-1))
         if key_lst[pg.K_DOWN]:
@@ -29,13 +31,14 @@ def main():
         if key_lst[pg.K_LEFT]:
             kt_rct.move_ip((-1,0))
         if key_lst[pg.K_RIGHT]:
-            kt_rct.move_ip((+1,0))
+            kt_rct.move_ip((+2,0))
         
         x = tmr%3200
         screen.blit(bg_img, [-x, 0])
         screen.blit(bg_img2, [-x+1600, 0])
         screen.blit(bg_img, [-x+3200, 0])
         screen.blit(kt_img, kt_rct) #練習4のこうかとん貼り付け
+    
         pg.display.update()
         tmr += 1        
         clock.tick(200)
